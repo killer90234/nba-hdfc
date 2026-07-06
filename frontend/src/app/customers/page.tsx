@@ -145,7 +145,7 @@ function CustomersContent() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-gray-900">{c.full_name}</p>
-                  <p className="text-sm text-gray-500">{c.customer_id} • {c.occupation || '-'} • {c.city || '-'}</p>
+                  <p className="text-sm text-gray-500">{c.occupation || '-'} • {c.city || '-'}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-medium text-gray-900">₹{c.annual_income ? `${(c.annual_income / 100000).toFixed(1)}L` : '-'}</p>

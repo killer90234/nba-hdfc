@@ -80,11 +80,11 @@ def create_customer(
 
 @router.get("/{customer_id}", response_model=CustomerFullProfile)
 def get_customer_profile(
-    customer_id: str,
+    customer_id: int,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
     if not customer:
         raise HTTPException(status_code=404, detail="Customer not found")
 
@@ -104,12 +104,12 @@ def get_customer_profile(
 
 @router.put("/{customer_id}", response_model=CustomerResponse)
 def update_customer(
-    customer_id: str,
+    customer_id: int,
     data: CustomerUpdate,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
     if not customer:
         raise HTTPException(status_code=404, detail="Customer not found")
 
@@ -125,12 +125,12 @@ def update_customer(
 # ── Family Details ──
 @router.post("/{customer_id}/family", response_model=FamilyResponse, status_code=201)
 def upsert_family(
-    customer_id: str,
+    customer_id: int,
     data: FamilyCreate,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
     if not customer:
         raise HTTPException(status_code=404, detail="Customer not found")
 
@@ -152,12 +152,12 @@ def upsert_family(
 # ── Employment Details ──
 @router.post("/{customer_id}/employment", response_model=EmploymentResponse, status_code=201)
 def upsert_employment(
-    customer_id: str,
+    customer_id: int,
     data: EmploymentCreate,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
     if not customer:
         raise HTTPException(status_code=404, detail="Customer not found")
 
@@ -179,12 +179,12 @@ def upsert_employment(
 # ── Banking Details ──
 @router.post("/{customer_id}/banking", response_model=BankingResponse, status_code=201)
 def upsert_banking(
-    customer_id: str,
+    customer_id: int,
     data: BankingCreate,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
     if not customer:
         raise HTTPException(status_code=404, detail="Customer not found")
 
