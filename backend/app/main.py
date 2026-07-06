@@ -32,6 +32,11 @@ app.include_router(products.router)
 @app.on_event("startup")
 def startup():
     Base.metadata.create_all(bind=engine)
+    try:
+        from seed import seed
+        seed()
+    except Exception as e:
+        print(f"Seed error: {e}")
 
 
 @app.get("/")
