@@ -199,20 +199,20 @@ function ProfileTab({ data, customerId, reload }: { data: any; customerId: strin
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Field label="Full Name" value={form.full_name} onChange={(v) => setForm({ ...form, full_name: v })} />
-          <Field label="Age" type="number" value={form.age} onChange={(v) => setForm({ ...form, age: v })} />
-          <SelectField label="Gender" value={form.gender} onChange={(v) => setForm({ ...form, gender: v })} options={['Male', 'Female', 'Other']} />
-          <Field label="Occupation" value={form.occupation} onChange={(v) => setForm({ ...form, occupation: v })} />
-          <Field label="Employer" value={form.employer} onChange={(v) => setForm({ ...form, employer: v })} />
-          <Field label="Annual Income (₹)" type="number" value={form.annual_income} onChange={(v) => setForm({ ...form, annual_income: v })} />
-          <Field label="Education" value={form.education} onChange={(v) => setForm({ ...form, education: v })} />
-          <SelectField label="Marital Status" value={form.marital_status} onChange={(v) => setForm({ ...form, marital_status: v })} options={['Single', 'Married', 'Divorced', 'Widowed']} />
-          <Field label="City" value={form.city} onChange={(v) => setForm({ ...form, city: v })} />
-          <Field label="State" value={form.state} onChange={(v) => setForm({ ...form, state: v })} />
-          <Field label="Mobile" value={form.mobile} onChange={(v) => setForm({ ...form, mobile: v })} />
-          <Field label="Email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
-          <Field label="PAN" value={form.pan_number} onChange={(v) => setForm({ ...form, pan_number: v.toUpperCase() })} />
-          <SelectField label="Risk Appetite" value={form.risk_appetite} onChange={(v) => setForm({ ...form, risk_appetite: v })} options={['conservative', 'moderate', 'aggressive']} />
+          <Field label="Full Name" value={form.full_name} onChange={(v: string) => setForm({ ...form, full_name: v })} />
+          <Field label="Age" type="number" value={form.age} onChange={(v: string) => setForm({ ...form, age: v })} />
+          <SelectField label="Gender" value={form.gender} onChange={(v: string) => setForm({ ...form, gender: v })} options={['Male', 'Female', 'Other']} />
+          <Field label="Occupation" value={form.occupation} onChange={(v: string) => setForm({ ...form, occupation: v })} />
+          <Field label="Employer" value={form.employer} onChange={(v: string) => setForm({ ...form, employer: v })} />
+          <Field label="Annual Income (₹)" type="number" value={form.annual_income} onChange={(v: string) => setForm({ ...form, annual_income: v })} />
+          <Field label="Education" value={form.education} onChange={(v: string) => setForm({ ...form, education: v })} />
+          <SelectField label="Marital Status" value={form.marital_status} onChange={(v: string) => setForm({ ...form, marital_status: v })} options={['Single', 'Married', 'Divorced', 'Widowed']} />
+          <Field label="City" value={form.city} onChange={(v: string) => setForm({ ...form, city: v })} />
+          <Field label="State" value={form.state} onChange={(v: string) => setForm({ ...form, state: v })} />
+          <Field label="Mobile" value={form.mobile} onChange={(v: string) => setForm({ ...form, mobile: v })} />
+          <Field label="Email" value={form.email} onChange={(v: string) => setForm({ ...form, email: v })} />
+          <Field label="PAN" value={form.pan_number} onChange={(v: string) => setForm({ ...form, pan_number: v.toUpperCase() })} />
+          <SelectField label="Risk Appetite" value={form.risk_appetite} onChange={(v: string) => setForm({ ...form, risk_appetite: v })} options={['conservative', 'moderate', 'aggressive']} />
         </div>
       </div>
     );
@@ -313,41 +313,41 @@ function FamilyTab({ data, customerId, reload }: { data: any; customerId: string
         <div className="bg-gray-50 rounded-lg p-4">
           <p className="text-sm font-medium text-gray-700 mb-3">Parents</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Field label="Father Name" value={form.father_name} onChange={(v) => setForm({ ...form, father_name: v })} />
-            <Field label="Father Age" type="number" value={form.father_age} onChange={(v) => setForm({ ...form, father_age: v })} />
-            <Field label="Mother Name" value={form.mother_name} onChange={(v) => setForm({ ...form, mother_name: v })} />
-            <Field label="Mother Age" type="number" value={form.mother_age} onChange={(v) => setForm({ ...form, mother_age: v })} />
-            <CheckboxField label="Dependent Parents" checked={form.dependent_parents} onChange={(v) => setForm({ ...form, dependent_parents: v })} />
-            <CheckboxField label="Parents Senior Citizen" checked={form.parents_senior_citizen} onChange={(v) => setForm({ ...form, parents_senior_citizen: v })} />
+            <Field label="Father Name" value={form.father_name} onChange={(v: string) => setForm({ ...form, father_name: v })} />
+            <Field label="Father Age" type="number" value={form.father_age} onChange={(v: string) => setForm({ ...form, father_age: v })} />
+            <Field label="Mother Name" value={form.mother_name} onChange={(v: string) => setForm({ ...form, mother_name: v })} />
+            <Field label="Mother Age" type="number" value={form.mother_age} onChange={(v: string) => setForm({ ...form, mother_age: v })} />
+            <CheckboxField label="Dependent Parents" checked={form.dependent_parents} onChange={(v: boolean) => setForm({ ...form, dependent_parents: v })} />
+            <CheckboxField label="Parents Senior Citizen" checked={form.parents_senior_citizen} onChange={(v: boolean) => setForm({ ...form, parents_senior_citizen: v })} />
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
           <p className="text-sm font-medium text-gray-700 mb-3">Spouse</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Field label="Spouse Name" value={form.spouse_name} onChange={(v) => setForm({ ...form, spouse_name: v })} />
-            <Field label="Spouse Age" type="number" value={form.spouse_age} onChange={(v) => setForm({ ...form, spouse_age: v })} />
-            <Field label="Spouse Occupation" value={form.spouse_occupation} onChange={(v) => setForm({ ...form, spouse_occupation: v })} />
+            <Field label="Spouse Name" value={form.spouse_name} onChange={(v: string) => setForm({ ...form, spouse_name: v })} />
+            <Field label="Spouse Age" type="number" value={form.spouse_age} onChange={(v: string) => setForm({ ...form, spouse_age: v })} />
+            <Field label="Spouse Occupation" value={form.spouse_occupation} onChange={(v: string) => setForm({ ...form, spouse_occupation: v })} />
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
           <p className="text-sm font-medium text-gray-700 mb-3">Children</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Field label="Number of Children" type="number" value={form.num_children} onChange={(v) => setForm({ ...form, num_children: Number(v) })} />
-            <Field label="Child 1 Age" type="number" value={form.child1_age} onChange={(v) => setForm({ ...form, child1_age: v })} />
-            <Field label="Child 1 Education" value={form.child1_education} onChange={(v) => setForm({ ...form, child1_education: v })} />
-            <Field label="Child 2 Age" type="number" value={form.child2_age} onChange={(v) => setForm({ ...form, child2_age: v })} />
-            <Field label="Child 2 Education" value={form.child2_education} onChange={(v) => setForm({ ...form, child2_education: v })} />
+            <Field label="Number of Children" type="number" value={form.num_children} onChange={(v: string) => setForm({ ...form, num_children: Number(v) })} />
+            <Field label="Child 1 Age" type="number" value={form.child1_age} onChange={(v: string) => setForm({ ...form, child1_age: v })} />
+            <Field label="Child 1 Education" value={form.child1_education} onChange={(v: string) => setForm({ ...form, child1_education: v })} />
+            <Field label="Child 2 Age" type="number" value={form.child2_age} onChange={(v: string) => setForm({ ...form, child2_age: v })} />
+            <Field label="Child 2 Education" value={form.child2_education} onChange={(v: string) => setForm({ ...form, child2_education: v })} />
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
           <p className="text-sm font-medium text-gray-700 mb-3">Financial</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Field label="Family Income (₹)" type="number" value={form.family_income} onChange={(v) => setForm({ ...form, family_income: v })} />
-            <Field label="Family Assets (₹)" type="number" value={form.family_assets} onChange={(v) => setForm({ ...form, family_assets: v })} />
-            <Field label="Family Investments (₹)" type="number" value={form.family_investments} onChange={(v) => setForm({ ...form, family_investments: v })} />
-            <Field label="Family Insurance (₹)" type="number" value={form.family_insurance_value} onChange={(v) => setForm({ ...form, family_insurance_value: v })} />
+            <Field label="Family Income (₹)" type="number" value={form.family_income} onChange={(v: string) => setForm({ ...form, family_income: v })} />
+            <Field label="Family Assets (₹)" type="number" value={form.family_assets} onChange={(v: string) => setForm({ ...form, family_assets: v })} />
+            <Field label="Family Investments (₹)" type="number" value={form.family_investments} onChange={(v: string) => setForm({ ...form, family_investments: v })} />
+            <Field label="Family Insurance (₹)" type="number" value={form.family_insurance_value} onChange={(v: string) => setForm({ ...form, family_insurance_value: v })} />
             <div className="md:col-span-2">
-              <Field label="Family Goals" value={form.family_goals} onChange={(v) => setForm({ ...form, family_goals: v })} />
+              <Field label="Family Goals" value={form.family_goals} onChange={(v: string) => setForm({ ...form, family_goals: v })} />
             </div>
           </div>
         </div>
@@ -434,15 +434,15 @@ function EmploymentTab({ data, customerId, reload }: { data: any; customerId: st
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <SelectField label="Employment Type" value={form.employment_type} onChange={(v) => setForm({ ...form, employment_type: v })} options={['government', 'private', 'business', 'self_employed', 'professional', 'retired', 'student']} />
-          <Field label="Monthly Income (₹)" type="number" value={form.monthly_income} onChange={(v) => setForm({ ...form, monthly_income: v })} />
-          <Field label="Monthly Expenses (₹)" type="number" value={form.monthly_expenses} onChange={(v) => setForm({ ...form, monthly_expenses: v })} />
-          <Field label="Salary Date (Day)" type="number" value={form.salary_date} onChange={(v) => setForm({ ...form, salary_date: v })} />
-          <Field label="Years in Job" type="number" value={form.years_in_job} onChange={(v) => setForm({ ...form, years_in_job: v })} />
-          <SelectField label="Company Category" value={form.company_category} onChange={(v) => setForm({ ...form, company_category: v })} options={['MNC', 'PSU', 'Startup', 'MSME', 'Government', 'Other']} />
-          <Field label="Business Turnover (₹)" type="number" value={form.business_turnover} onChange={(v) => setForm({ ...form, business_turnover: v })} />
-          <Field label="Credit Score" type="number" value={form.credit_score} onChange={(v) => setForm({ ...form, credit_score: v })} />
-          <CheckboxField label="GST Registered" checked={form.gst_registered} onChange={(v) => setForm({ ...form, gst_registered: v })} />
+          <SelectField label="Employment Type" value={form.employment_type} onChange={(v: string) => setForm({ ...form, employment_type: v })} options={['government', 'private', 'business', 'self_employed', 'professional', 'retired', 'student']} />
+          <Field label="Monthly Income (₹)" type="number" value={form.monthly_income} onChange={(v: string) => setForm({ ...form, monthly_income: v })} />
+          <Field label="Monthly Expenses (₹)" type="number" value={form.monthly_expenses} onChange={(v: string) => setForm({ ...form, monthly_expenses: v })} />
+          <Field label="Salary Date (Day)" type="number" value={form.salary_date} onChange={(v: string) => setForm({ ...form, salary_date: v })} />
+          <Field label="Years in Job" type="number" value={form.years_in_job} onChange={(v: string) => setForm({ ...form, years_in_job: v })} />
+          <SelectField label="Company Category" value={form.company_category} onChange={(v: string) => setForm({ ...form, company_category: v })} options={['MNC', 'PSU', 'Startup', 'MSME', 'Government', 'Other']} />
+          <Field label="Business Turnover (₹)" type="number" value={form.business_turnover} onChange={(v: string) => setForm({ ...form, business_turnover: v })} />
+          <Field label="Credit Score" type="number" value={form.credit_score} onChange={(v: string) => setForm({ ...form, credit_score: v })} />
+            <CheckboxField label="GST Registered" checked={form.gst_registered} onChange={(v: boolean) => setForm({ ...form, gst_registered: v })} />
         </div>
       </div>
     );
@@ -534,23 +534,23 @@ function BankingTab({ data, customerId, reload }: { data: any; customerId: strin
         <div className="bg-gray-50 rounded-lg p-4">
           <p className="text-sm font-medium text-gray-700 mb-3">Accounts</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <CheckboxField label="Savings Account" checked={form.has_savings_account} onChange={(v) => setForm({ ...form, has_savings_account: v })} />
-            <CheckboxField label="Salary Account" checked={form.has_salary_account} onChange={(v) => setForm({ ...form, has_salary_account: v })} />
-            <CheckboxField label="Current Account" checked={form.has_current_account} onChange={(v) => setForm({ ...form, has_current_account: v })} />
+            <CheckboxField label="Savings Account" checked={form.has_savings_account} onChange={(v: boolean) => setForm({ ...form, has_savings_account: v })} />
+            <CheckboxField label="Salary Account" checked={form.has_salary_account} onChange={(v: boolean) => setForm({ ...form, has_salary_account: v })} />
+            <CheckboxField label="Current Account" checked={form.has_current_account} onChange={(v: boolean) => setForm({ ...form, has_current_account: v })} />
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-4">
           <p className="text-sm font-medium text-gray-700 mb-3">Balances & Transactions</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Field label="Current Balance (₹)" type="number" value={form.current_balance} onChange={(v) => setForm({ ...form, current_balance: v })} />
-            <Field label="Average Balance (₹)" type="number" value={form.average_balance} onChange={(v) => setForm({ ...form, average_balance: v })} />
-            <Field label="Salary Credit (₹)" type="number" value={form.salary_credit} onChange={(v) => setForm({ ...form, salary_credit: v })} />
-            <Field label="Monthly Debit (₹)" type="number" value={form.monthly_debit} onChange={(v) => setForm({ ...form, monthly_debit: v })} />
-            <Field label="Monthly Credit (₹)" type="number" value={form.monthly_credit} onChange={(v) => setForm({ ...form, monthly_credit: v })} />
-            <Field label="UPI Monthly (₹)" type="number" value={form.upi_monthly} onChange={(v) => setForm({ ...form, upi_monthly: v })} />
-            <Field label="FD Amount (₹)" type="number" value={form.fd_amount} onChange={(v) => setForm({ ...form, fd_amount: v })} />
-            <Field label="RD Amount (₹)" type="number" value={form.rd_amount} onChange={(v) => setForm({ ...form, rd_amount: v })} />
-            <Field label="ATM Usage/Month" type="number" value={form.atm_usage_monthly} onChange={(v) => setForm({ ...form, atm_usage_monthly: v })} />
+            <Field label="Current Balance (₹)" type="number" value={form.current_balance} onChange={(v: string) => setForm({ ...form, current_balance: v })} />
+            <Field label="Average Balance (₹)" type="number" value={form.average_balance} onChange={(v: string) => setForm({ ...form, average_balance: v })} />
+            <Field label="Salary Credit (₹)" type="number" value={form.salary_credit} onChange={(v: string) => setForm({ ...form, salary_credit: v })} />
+            <Field label="Monthly Debit (₹)" type="number" value={form.monthly_debit} onChange={(v: string) => setForm({ ...form, monthly_debit: v })} />
+            <Field label="Monthly Credit (₹)" type="number" value={form.monthly_credit} onChange={(v: string) => setForm({ ...form, monthly_credit: v })} />
+            <Field label="UPI Monthly (₹)" type="number" value={form.upi_monthly} onChange={(v: string) => setForm({ ...form, upi_monthly: v })} />
+            <Field label="FD Amount (₹)" type="number" value={form.fd_amount} onChange={(v: string) => setForm({ ...form, fd_amount: v })} />
+            <Field label="RD Amount (₹)" type="number" value={form.rd_amount} onChange={(v: string) => setForm({ ...form, rd_amount: v })} />
+            <Field label="ATM Usage/Month" type="number" value={form.atm_usage_monthly} onChange={(v: string) => setForm({ ...form, atm_usage_monthly: v })} />
           </div>
         </div>
       </div>

@@ -85,19 +85,19 @@ function CustomersContent() {
         <div className="bg-white rounded-xl p-6 card-shadow">
           <h3 className="font-semibold text-gray-800 mb-4">Create New Customer</h3>
           <form onSubmit={handleCreate} className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Input label="Full Name *" value={form.full_name} onChange={(v) => setForm({ ...form, full_name: v })} required />
-            <Input label="Age" type="number" value={form.age} onChange={(v) => setForm({ ...form, age: v })} />
-            <Select label="Gender" value={form.gender} onChange={(v) => setForm({ ...form, gender: v })} options={['Male', 'Female', 'Other']} />
-            <Input label="Occupation" value={form.occupation} onChange={(v) => setForm({ ...form, occupation: v })} />
-            <Input label="Employer" value={form.employer} onChange={(v) => setForm({ ...form, employer: v })} />
-            <Input label="Annual Income (₹)" type="number" value={form.annual_income} onChange={(v) => setForm({ ...form, annual_income: v })} />
-            <Input label="Education" value={form.education} onChange={(v) => setForm({ ...form, education: v })} />
-            <Select label="Marital Status" value={form.marital_status} onChange={(v) => setForm({ ...form, marital_status: v })} options={['Single', 'Married', 'Divorced', 'Widowed']} />
-            <Input label="City" value={form.city} onChange={(v) => setForm({ ...form, city: v })} />
-            <Input label="Mobile" value={form.mobile} onChange={(v) => setForm({ ...form, mobile: v })} />
-            <Input label="Email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
-            <Input label="PAN" value={form.pan_number} onChange={(v) => setForm({ ...form, pan_number: v.toUpperCase() })} />
-            <Select label="Risk Appetite" value={form.risk_appetite} onChange={(v) => setForm({ ...form, risk_appetite: v })} options={['conservative', 'moderate', 'aggressive']} />
+            <Input label="Full Name *" value={form.full_name} onChange={(v: string) => setForm({ ...form, full_name: v })} required />
+            <Input label="Age" type="number" value={form.age} onChange={(v: string) => setForm({ ...form, age: v })} />
+            <Select label="Gender" value={form.gender} onChange={(v: string) => setForm({ ...form, gender: v })} options={['Male', 'Female', 'Other']} />
+            <Input label="Occupation" value={form.occupation} onChange={(v: string) => setForm({ ...form, occupation: v })} />
+            <Input label="Employer" value={form.employer} onChange={(v: string) => setForm({ ...form, employer: v })} />
+            <Input label="Annual Income (₹)" type="number" value={form.annual_income} onChange={(v: string) => setForm({ ...form, annual_income: v })} />
+            <Input label="Education" value={form.education} onChange={(v: string) => setForm({ ...form, education: v })} />
+            <Select label="Marital Status" value={form.marital_status} onChange={(v: string) => setForm({ ...form, marital_status: v })} options={['Single', 'Married', 'Divorced', 'Widowed']} />
+            <Input label="City" value={form.city} onChange={(v: string) => setForm({ ...form, city: v })} />
+            <Input label="Mobile" value={form.mobile} onChange={(v: string) => setForm({ ...form, mobile: v })} />
+            <Input label="Email" value={form.email} onChange={(v: string) => setForm({ ...form, email: v })} />
+            <Input label="PAN" value={form.pan_number} onChange={(v: string) => setForm({ ...form, pan_number: v.toUpperCase() })} />
+            <Select label="Risk Appetite" value={form.risk_appetite} onChange={(v: string) => setForm({ ...form, risk_appetite: v })} options={['conservative', 'moderate', 'aggressive']} />
             <div className="md:col-span-3 flex justify-end">
               <button type="submit" className="bg-[#004B8D] hover:bg-[#003366] text-white px-6 py-2.5 rounded-lg font-medium transition">
                 Create Customer
