@@ -117,7 +117,7 @@ function CustomersContent() {
             placeholder="Search by name, customer ID, mobile, email, PAN..."
             className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#004B8D] focus:border-transparent outline-none"
           />
-          <button onClick={handleSearch} className="bg-[#004B8D] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#003366] transition">
+          <button onClick={() => handleSearch()} className="bg-[#004B8D] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#003366] transition">
             Search
           </button>
         </div>
