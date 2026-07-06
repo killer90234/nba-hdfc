@@ -641,7 +641,7 @@ function ProductsTab({ data, customerId, reload, hdfcProducts }: { data: any[]; 
     }
   };
 
-  const categories = [...new Set(hdfcProducts.map((p: any) => p.category))];
+  const categories = Array.from(new Set(hdfcProducts.map((p: any) => p.category)));
   const [filterCategory, setFilterCategory] = useState('');
   const filteredProducts = filterCategory
     ? hdfcProducts.filter((p: any) => p.category === filterCategory)
@@ -944,7 +944,7 @@ function AITab({ recommendations, insights, loading, customerId }: { recommendat
   );
 }
 
-function Field({ label, value, onChange, type = 'text' }: any) {
+function Field({ label, value, onChange, type = 'text' }: { label: string; value: string | number; onChange: (v: string) => void; type?: string }) {
   return (
     <div>
       <label className="block text-xs text-gray-500 mb-1">{label}</label>
@@ -954,7 +954,7 @@ function Field({ label, value, onChange, type = 'text' }: any) {
   );
 }
 
-function SelectField({ label, value, onChange, options }: any) {
+function SelectField({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: string[] }) {
   return (
     <div>
       <label className="block text-xs text-gray-500 mb-1">{label}</label>
@@ -967,7 +967,7 @@ function SelectField({ label, value, onChange, options }: any) {
   );
 }
 
-function CheckboxField({ label, checked, onChange }: any) {
+function CheckboxField({ label, checked, onChange }: { label: string; checked: boolean; onChange: (v: boolean) => void }) {
   return (
     <div className="flex items-center gap-2 py-2">
       <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)}
