@@ -52,14 +52,14 @@ function CustomersContent() {
         age: form.age ? parseInt(form.age) : null,
         annual_income: form.annual_income ? parseFloat(form.annual_income) : null,
       };
-      const customer = await api.createCustomer(data);
+      await api.createCustomer(data);
       setShowCreate(false);
       setForm({
         full_name: '', age: '', gender: '', occupation: '', employer: '',
         annual_income: '', education: '', marital_status: '', city: '',
         mobile: '', email: '', pan_number: '', risk_appetite: 'moderate',
       });
-      router.push(`/customers/${customer.customer_id}`);
+      handleSearch('');
     } catch (err: any) {
       alert(err.message);
     }

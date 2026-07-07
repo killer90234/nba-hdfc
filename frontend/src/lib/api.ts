@@ -1,4 +1,4 @@
-const API_BASE = 'https://nba-hdfc.onrender.com';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
 
 export async function apiFetch(path: string, options: RequestInit = {}) {
   const token = typeof window !== 'undefined' ? localStorage.getItem('hdfc_token') : null;
