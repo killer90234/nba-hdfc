@@ -50,22 +50,22 @@ class CustomerResponse(BaseModel):
     id: int
     customer_id: str
     full_name: str
-    age: Optional[int]
-    gender: Optional[str]
-    occupation: Optional[str]
-    employer: Optional[str]
-    annual_income: Optional[float]
-    education: Optional[str]
-    marital_status: Optional[str]
-    city: Optional[str]
-    state: Optional[str]
-    email: Optional[str]
-    mobile: Optional[str]
-    kyc_status: str
-    risk_appetite: str
-    total_relationship_value: float
-    customer_since: Optional[datetime]
-    created_at: datetime
+    age: Optional[int] = None
+    gender: Optional[str] = None
+    occupation: Optional[str] = None
+    employer: Optional[str] = None
+    annual_income: Optional[float] = None
+    education: Optional[str] = None
+    marital_status: Optional[str] = None
+    city: Optional[str] = None
+    state: Optional[str] = None
+    email: Optional[str] = None
+    mobile: Optional[str] = None
+    kyc_status: str = "pending"
+    risk_appetite: str = "moderate"
+    total_relationship_value: Optional[float] = 0.0
+    customer_since: Optional[datetime] = None
+    created_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True
